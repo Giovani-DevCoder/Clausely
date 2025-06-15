@@ -19,7 +19,7 @@ const Home = () => {
 
       <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Call to Action */}
-        <div className="text-center mt-20">
+        <div className="text-center mt-20 mb-20">
           <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? "text-white" : "text-slate-900"}`}>
             Ready to ensure compliance?
           </h2>

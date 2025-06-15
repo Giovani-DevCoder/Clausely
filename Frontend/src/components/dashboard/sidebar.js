@@ -22,9 +22,14 @@ const Sidebar = () => {
   const menuItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard", active: true },
     { icon: FolderOpen, label: "Projects", path: "/projects" },
+    { icon: MapPin, label: "Region Selector", path: "/regions" },
+    { icon: FileText, label: "Legal Briefs", path: "/legal-briefs" },
     { icon: Database, label: "Dataset Explorer", path: "/dataset-explorer" },
     { icon: Bot, label: "Agent Console", path: "/agent-console" },
+    { icon: Brain, label: "Model Evaluation", path: "/model-evaluation" },
     { icon: Wrench, label: "Model & API Configuration", path: "/model-configuration" },
+    { icon: BookOpen, label: "TechDocs", path: "/techdocs" },
+    { icon: Settings, label: "Settings", path: "/settings" },
   ]
 
   return (
