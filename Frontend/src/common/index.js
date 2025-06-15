@@ -1,5 +1,5 @@
 // Definir el dominio base para el backend
-const backendDomin = 'http://localhost:8080';
+const backendDomin = process.env.REACT_APP_BACKEND_URL;
 
 // Configuración de las rutas de las API's
 const SummaryApi = {
