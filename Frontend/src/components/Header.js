@@ -72,7 +72,7 @@ const Header = () => {
       
             <div className="flex items-center space-x-3">
               
-          <Link to={'/'}>
+          <Link to={'/home'}>
             <h1
               className={`text-xl font-bold transition-colors duration-200 ${isDark ? "text-white" : "text-slate-900"}`}
             >

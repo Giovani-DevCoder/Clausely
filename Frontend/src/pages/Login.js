@@ -54,7 +54,7 @@ const Login = () => {
       if (responseData.success) {
         toast.success(responseData.message)
         localStorage.setItem("authToken", responseData.token)
-        navigate("/")
+        navigate("/home")
         fetchUserDetails()
       } else {
         toast.warning(responseData.message)
