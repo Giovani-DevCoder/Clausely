@@ -66,7 +66,7 @@ const Header = () => {
 
   return (
     <header className={`w-full px-6 py-4 border-b transition-colors duration-200 ${
-      isDark ? "bg-slate-900 border-slate-700" : "bg-white border-slate-200"
+      isDark ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"
     }`}>
         <div className="flex items-center justify-between max-w-7xl mx-auto">
       

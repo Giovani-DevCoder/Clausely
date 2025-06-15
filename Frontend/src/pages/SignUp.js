@@ -6,7 +6,7 @@ import { toast } from "sonner"
 import { useTheme } from "../context/theme-context"
 import { useLanguage } from "../context/language-context"
 import Header from "../components/Header"
-import { FaImage } from "react-icons/fa"
+import ImageCarousel from "../components/ImageCarousel"
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -118,20 +118,13 @@ const SignUp = () => {
           {/* Main Content */}
           <div className="relative z-10 flex-1 flex flex-col justify-center">
             {/* Placeholder Image */}
-            <div className={`rounded-xl p-12 transition-colors mb-10 ${isDark ? "bg-slate-800/50" : "bg-gray-200"}`}>
-              <div className={`flex flex-col items-center gap-7 ${isDark ? "text-slate-400" : "text-gray-500"}`}>
-                <div
-                  className="w-16 h-16 mx-auto rounded-lg flex items-end justify-center"
-                >
-                  <FaImage className="w-12 h-12" />
-                </div>
-                <p className="text-sm">{t("joinThousands")}</p>
-              </div>
+            <div className="mb-10">
+              <ImageCarousel />
             </div>
 
             <h1
               className={`text-4xl font-bold mb-4 leading-tight transition-colors duration-200 ${
-                isDark ? "text-white" : "text-[#5985ff]"
+                isDark ? "text-white" : "text-neutral-900"
               }`}
             >
               {t("startYourLegal")}

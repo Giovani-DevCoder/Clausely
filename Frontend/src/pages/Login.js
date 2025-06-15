@@ -5,6 +5,7 @@ import SummaryApi from "../common"
 import Context from "../context"
 import { toast } from "sonner"
 import { FaImage } from "react-icons/fa6"
+import ImageCarousel from "../components/ImageCarousel"
 import { useTheme } from "../context/theme-context"
 import { useLanguage } from "../context/language-context"
 import Header from "../components/Header"
@@ -116,19 +117,10 @@ const Login = () => {
           {/* Main Content */}
           <div className="relative z-10 flex-1 flex flex-col">
             {/* Placeholder Image */}
-            <div className={`rounded-xl p-12 transition-colors mb-10 ${isDark ? "bg-slate-800/50" : "bg-gray-200"}`}>
-              <div className={`flex flex-col items-center gap-7 ${isDark ? "text-slate-400" : "text-gray-500"}`}>
-                <div
-                  className="w-16 h-16 mx-auto rounded-lg flex items-end justify-center"
-                >
-                  <FaImage className="w-12 h-12" />
-                </div>
-                <p className="text-sm">16:9 Image Placeholder (ai gen image insert later)</p>
-              </div>
-            </div>
+            <ImageCarousel />
 
             <h1
-              className={`text-4xl font-bold mb-4 leading-tight transition-colors duration-200 ${
+              className={`text-4xl font-bold mt-8 mb-4 leading-tight transition-colors duration-200 ${
                 isDark ? "text-white" : "text-neutral-900"
               }`}
             >

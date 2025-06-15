@@ -6,7 +6,12 @@ import SignUp from "../pages/SignUp"
 import AdminPanel from "../pages/AdminPanel";
 import AllUsers from "../pages/AllUsers";
 import AllProducts from "../pages/AllProducts";
-import CategoryProduct from "../pages/CategoryProduct"
+import CategoryProduct from "../pages/CategoryProduct";
+import Dashboard from "../pages/Dashboard";
+import Projects from "../pages/Projects";
+import ModelConfig from "../pages/ModelConfig";
+import AgentConsole from "../pages/AgentConsole"
+import DatasetExplorer from "../pages/DatasetExplorer"
 
 const router = createBrowserRouter([
     {
@@ -28,6 +33,26 @@ const router = createBrowserRouter([
             {
                 path : "product-category/:categoryname",
                 element : <CategoryProduct/>
+            },
+            {
+                path : "dashboard",
+                element : <Dashboard/>
+            },
+            {
+                path : "projects",
+                element : <Projects/>
+            },
+            {
+                path : "model-configuration",
+                element : <ModelConfig/>
+            },
+            {
+                path : "agent-console",
+                element : <AgentConsole/>
+            },
+            {
+                path : "dataset-explorer",
+                element : <DatasetExplorer/>
             },
             {
                 path : "admin-panel",
