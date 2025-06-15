@@ -1,11 +1,12 @@
-'use client'
+'use client';
 
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 interface CarouselProps {
   images: string[];
-  interval?: number; // Optional interval in milliseconds, defaults to 3000
+  interval?: number;
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000 }) => {
@@ -18,21 +19,42 @@ export const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000 }) =
     return () => clearInterval(timer);
   }, [images, interval]);
 
+  const variants = {
+    enter: {
+      opacity: 0,
+      x: 100,
+    },
+    center: {
+      opacity: 1,
+      x: 0,
+    },
+    exit: {
+      opacity: 0,
+      x: -100,
+    },
+  };
+
   return (
-    <div className="absolute inset-0 w-full h-full">
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
+    <div className="relative w-2/4 mx-auto h-96 overflow-hidden rounded-2xl shadow-2xl">
+      <AnimatePresence initial={false} custom={currentIndex}>
+        <motion.div
+          key={currentIndex}
+          custom={currentIndex}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ x: { type: 'spring', stiffness: 300, damping: 30 }, opacity: { duration: 0.5 } }}
+          className="absolute w-full h-full"
         >
-          <img
-            src={image}
-            alt={`Carousel image ${index + 1}`}
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          <Image
+            src={images[currentIndex]}
+            alt={`Carousel image ${currentIndex + 1}`}
+            layout="fill"
+            objectFit="contain"
           />
-        </div>
-      ))}
-       <div className="absolute inset-0 bg-black opacity-40"></div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

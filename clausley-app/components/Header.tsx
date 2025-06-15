@@ -82,17 +82,17 @@ const Header: React.FC<HeaderProps> = ({ isLandingPage = false }) => {
   }, [menuDisplay]);
 
   return (
-    <header className={`w-full px-6 py-4 border-b transition-colors duration-200 ${isDark ? "bg-gradient-to-r from-slate-900 to-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+    <header className="sticky top-0 z-50 bg-gray-800 text-white shadow-md">
+        <div className="flex items-center justify-between px-4 py-2">
       
             <div className="flex items-center space-x-3">
               
                     <Link href={'/dashboard'} className="flex items-center space-x-2">
-            <Image src="/clausly_logo_-_Copy-removebg-preview.png" alt="Clausely Logo" width={32} height={32} />
-              <h1
-                className={`text-xl font-bold text-white`}>
-                Clausely
-              </h1>
+              <Image src="/clausly_logo_-_Copy-removebg-preview.png" alt="Clausely Logo" width={50} height={50} />
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-bold text-white">Clausely</h1>
+                <p className="text-sm text-gray-400">AI-Powered Legal Compliance</p>
+              </div>
             </Link>
           {/* Removed search bar */}
         </div>
@@ -102,11 +102,7 @@ const Header: React.FC<HeaderProps> = ({ isLandingPage = false }) => {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-              className={`flex items-center space-x-2 px-3 py-2 rounded-xl border transition-colors duration-200 ${
-                isDark
-                  ? "bg-slate-800 border-slate-600 text-slate-200 hover:bg-slate-700"
-                  : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
-              }`}
+              className="flex items-center space-x-2 px-3 py-2 rounded-xl border border-gray-600 bg-gray-700 text-white hover:bg-gray-600 transition-colors duration-200"
             >
               <span className="text-sm">{currentLang?.flag}</span>
               <span className="text-sm font-medium">{currentLang?.code.toUpperCase()}</span>
@@ -118,9 +114,7 @@ const Header: React.FC<HeaderProps> = ({ isLandingPage = false }) => {
             {/* Language Dropdown */}
             {isLanguageDropdownOpen && (
               <div
-                className={`absolute right-0 mt-2 w-48 rounded-xl border shadow-lg z-50 transition-colors duration-200 ${
-                  isDark ? "bg-slate-800 border-slate-600" : "bg-white border-slate-200"
-                }`}
+                className="absolute right-0 mt-2 w-48 rounded-xl border border-gray-600 bg-gray-800 shadow-lg z-50"
               >
                 <div className="py-1">
                   {languages.map((language: Language) => (
@@ -130,15 +124,10 @@ const Header: React.FC<HeaderProps> = ({ isLandingPage = false }) => {
                         changeLanguage(language.code)
                         setIsLanguageDropdownOpen(false)
                       }}
-                      className={`w-full flex items-center space-x-3 px-4 py-2 text-left transition-colors duration-200 ${
-                        currentLanguage === language.code
-                          ? isDark
-                            ? "bg-blue-600 text-white"
-                            : "bg-blue-50 text-blue-700"
-                          : isDark
-                            ? "text-slate-200 hover:bg-slate-700"
-                            : "text-slate-700 hover:bg-slate-50"
-                      }`}
+                      className={`w-full flex items-center space-x-3 px-4 py-2 text-left transition-colors duration-200 ${currentLanguage === language.code
+                          ? "bg-blue-600 text-white"
+                          : "text-gray-200 hover:bg-gray-700"
+                        }`}
                     >
                       <span className="text-lg">{language.flag}</span>
                       <div className="flex flex-col">
@@ -151,7 +140,7 @@ const Header: React.FC<HeaderProps> = ({ isLandingPage = false }) => {
               </div>
             )}
           </div>
-          {/* Removed New Project button */}
+          
           <UserButton afterSignOutUrl='/' />
         </div>
       </div>

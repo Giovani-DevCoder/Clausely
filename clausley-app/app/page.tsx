@@ -38,7 +38,7 @@ const LandingPageContent: React.FC<{ images: string[] }> = ({ images }) => {
     <main className="flex-grow flex flex-col items-center justify-center text-center p-4">
       {/* Image Section */}
       <div className="w-full max-w-6xl mx-auto mb-8">
-        <img src="/ss1.png" alt="Clausely Product Screenshot" className="rounded-2xl shadow-2xl w-full object-contain max-h-96" />
+        <Carousel images={images} />
       </div>
 
       {/* Hero Text Section */}
@@ -72,9 +72,9 @@ const LandingPageContent: React.FC<{ images: string[] }> = ({ images }) => {
 // 3. Main Home Component
 const Home: React.FC = () => {
   const images = [
-    '/ss1.png',
-    '/ss2.png',
-    '/ss3.png',
+    '/Screenshot 2025-06-14 170316.png',
+    '/Screenshot 2025-06-14 170433.png',
+    '/Screenshot 2025-06-14 180853.png',
   ];
 
   return (
