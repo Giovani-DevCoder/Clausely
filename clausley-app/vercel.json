@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_test_cHJlc2VudC1tYWNhcXVlLTIwLmNsZXJrLmFjY291bnRzLmRldi$",
+      "CLERK_SECRET_KEY": "sk_test_KOSOg5zOGmoAtXiDmmlKs6tyRfgdugePxEKT98kn0Z"
+    }
+  }
+}
